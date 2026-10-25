@@ -1,0 +1,10 @@
+---
+- hosts: ops
+  connection: ssh
+   
+
+  tasks:
+    - name: creating a user 
+      user:
+        name: saibabu
+        state: present
