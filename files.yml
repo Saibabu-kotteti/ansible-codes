@@ -1,0 +1,21 @@
+---
+- hosts: dev
+  connection: ssh
+
+
+  tasks: 
+    - name: creating a file
+      file:
+        path: "/root/sai"
+        state: touch
+
+    - name: creating multiples files
+      file: 
+        path: "/root/ {{item}}"
+        state: touch
+
+      loop:
+        - rugma
+        - santhi
+        - sasi
+...
