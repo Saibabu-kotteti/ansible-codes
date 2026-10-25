@@ -1,0 +1,25 @@
+---
+- hosts: ops
+  connection: ssh
+
+
+  tasks:
+    - name: creating folders
+      file:
+        path: "/root/hari"
+        state: directory
+
+
+
+
+    - name: creating multipl foldes
+      file:
+        path: "{{ item }}"
+        state: directory
+
+      loop:
+        - veeru
+        - sneha
+        - sita
+
+...
