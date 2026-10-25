@@ -1,0 +1,22 @@
+---
+- hosts: ops
+  connection: ssh
+
+
+
+  tasks:
+    - name: creating a group
+      group:
+        name: infosys
+        state: present
+
+
+    - name: creating multiple groups
+      group:
+        name: "{{item}}"
+        state: present
+
+      loop:
+        - tokyo
+        - america
+        - singapore
